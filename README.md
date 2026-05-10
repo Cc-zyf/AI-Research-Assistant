@@ -1,23 +1,23 @@
 # 🤖 AI Research Assistant
-**多智能体协同技术资料分析平台** | Powered by LangChain + FastAPI
 
-## 🔧 技术栈
-- **底层模型**: DeepSeek-V3 (主力) | Qwen-Max (复杂推理) | MiMo-V2.5 (长链路)
-- **后端**: FastAPI + Redis (异步任务队列)
-- **工作流**: LangChain + Dify (4-Agent协同)
-- **日均处理**: 20+ GitHub仓库分析 | 15+ 技术文章总结
+> 多智能体协同技术资料自动化分析平台  
+> Multi-Agent Technical Document Analysis Platform
 
-## 📊 核心指标
-| 指标          | 数值                     |
-|---------------|--------------------------|
-| 日均Token消耗 | 150K ~ 280K              |
-| 高峰Token消耗 | 420K/日                  |
-| 单任务平均    | 25K ~ 80K tokens         |
-| 效率提升      | 资料消化时间压缩90%+     |
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-green.svg)](https://fastapi.tiangolo.com/)
+[![LangChain](https://img.shields.io/badge/LangChain-0.1+-orange.svg)](https://www.langchain.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## 🚀 快速开始
-```bash
-git clone https://github.com/yourusername/ai-research-assistant.git
-cd ai-research-assistant
-pip install -r requirements.txt
-uvicorn main:app --reload
+## 📖 项目简介
+
+基于 **LangChain + FastAPI** 构建的多智能体协同平台，通过 4 个专业 Agent 自动化分析技术文档、GitHub 仓库、学术论文等，大幅提升开发者资料消化效率（**10~20倍**）。
+
+### 核心特性
+
+- 🔗 **多智能体协同**：需求理解 → 信息检索 → 内容提取 → 智能总结
+- ⚡ **异步任务队列**：基于 Redis 的高并发处理（峰值 50+ 并发任务）
+- 🧠 **多模型支持**：DeepSeek-V3、Qwen-Max、MiMo-V2.5、GPT-4o
+- 📊 **长上下文处理**：MapReduce 策略支持 100K+ tokens 输入
+- 🔍 **工具集成**：Google Search API、GitHub API、ArXiv API
+
+## 🏗️ 架构设计
