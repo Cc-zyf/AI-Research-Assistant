@@ -21,3 +21,74 @@
 - 🔍 **工具集成**：Google Search API、GitHub API、ArXiv API
 
 ## 🏗️ 架构设计
+
+## 📁 项目结构
+ai-research-assistant/
+├── main.py # FastAPI 入口
+├── agents/
+│ ├── requirement.py # 需求理解 Agent
+│ ├── retrieval.py # 信息检索 Agent
+│ ├── extraction.py # 内容提取 Agent
+│ └── summary.py # 智能总结 Agent
+├── workflows/
+│ └── research_workflow.py # LangChain 工作流
+├── utils/
+│ ├── redis_queue.py # 异步任务队列
+│ └── token_counter.py # Token 统计
+├── config.py # 配置文件
+└── requirements.txt
+
+
+
+## 🚀 快速开始
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/yourusername/ai-research-assistant.git
+cd ai-research-assistant
+
+# 2. 安装依赖
+pip install -r requirements.txt
+
+# 3. 配置环境变量
+cp .env.example .env
+# 编辑 .env 填入 API Keys
+
+# 4. 启动 Redis
+docker run -d -p 6379:6379 redis:alpine
+
+# 5. 运行服务
+uvicorn main:app --reload
+
+📊 使用数据
+✅ 已服务 12 位内测开发者
+✅ 累计处理 300+ 次任务
+✅ 近 14 天 Token 消耗：2.8M (日均 150K~280K)
+✅ 平均响应时间：45 秒（长文档 60~90 秒）
+📝 使用示例
+Bash
+
+curl -X POST http://localhost:8000/api/v1/research \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "分析 FastAPI 的异步架构设计",
+    "sources": ["google", "github"],
+    "depth": "detailed"
+  }'
+🛣️ Roadmap
+ 基础多智能体工作流
+ GitHub 仓库分析
+ 学术论文摘要
+ 每日自动化扫描（GitHub Trending/ArXiv）
+ 方案设计与代码示例生成
+ Web 界面
+📄 License
+MIT License - 详见 LICENSE
+
+🙏 致谢
+本项目使用以下开源技术/服务：
+
+LangChain
+FastAPI
+DeepSeek
+Qwen
